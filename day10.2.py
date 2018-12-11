@@ -52,5 +52,4 @@ def plotMessage(t,x_vec=x_vec,y_vec=y_vec,vx_vec=vx_vec,vy_vec=vy_vec):
 
     return True
 
-for time in tList:
-    plotMessage(time)
+plotMessage(10886)
