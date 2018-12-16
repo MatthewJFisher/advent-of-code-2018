@@ -13,7 +13,9 @@ while not done:
     elif inList[index]==inList[index-1].swapcase():
         del inList[index]
         del inList[index-1]
-        index = index - 1
+        if index > 1:
+            index = index - 1
+
 
     else:
         index += 1

@@ -39,11 +39,15 @@ for line in inList:
 
 first_collision = False
 tick = 0
-while not first_collision:
+while len(cartDict) > 1:
     cartList = cartDict.keys()
     cartList = sorted(cartList, key=lambda x: (cartDict[x]['pos'][1],cartDict[x]['pos'][0]))
     tick+=1
     for cart in cartList:
+        if cart not in cartDict.keys():
+            continue
+        # print(cart)
+        # print(cartDict.keys())
         old_pos = cartDict[cart]['pos']
         old_dir = cartDict[cart]['dir']
         old_next = cartDict[cart]['next']
@@ -94,6 +98,8 @@ while not first_collision:
             cartDict[cart]['tick'] = new_tick
 
         else:
-            first_collision = True
-            print(new_pos)
-            break
+            del cartDict[mapDict[new_pos]['cart']]
+            del cartDict[cart]
+            mapDict[new_pos]['cart']=False
+
+print(cartDict)
