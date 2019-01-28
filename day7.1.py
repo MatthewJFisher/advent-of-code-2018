@@ -1,5 +1,6 @@
 from string import ascii_uppercase
-infile = open("day7.in", "r")
+# infile = open("day7.in", "r")
+infile = open("/home/matthew/Downloads/input.txt", "r")
 # infile = open("test.in", "r")
 inString = infile.read()
 

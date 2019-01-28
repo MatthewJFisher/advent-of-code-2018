@@ -6,7 +6,7 @@ inList = inString.split(' ')
 inList = list(map(int, inList))
 
 index = 0
-
+depth = 0
 def getNodeLen(inList, current_index):
     MDsum = 0
     nChildren = inList[current_index]
@@ -14,6 +14,7 @@ def getNodeLen(inList, current_index):
     length = 2
     if nChildren > 0:
         for i in range(nChildren):
+            print(i)
             index = current_index+length
             length += getNodeLen(inList, index)[0]
             MDsum +=getNodeLen(inList, index)[1]
@@ -23,6 +24,7 @@ def getNodeLen(inList, current_index):
         # print(MDsum)
         # print('length '+str(length))
         MDsum += inList[current_index+length-1-j]
+
     return(length, MDsum)
 
 
